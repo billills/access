@@ -23,11 +23,6 @@
         h1 {
             font-size: 2em; /* responsive font size */
         }
-        #stats {
-            width: 90%; /* responsive width */
-            text-align: center;
-            margin: 10px auto;
-        }
         .button {
             display: inline-block;
             padding: 10px 20px;
@@ -54,20 +49,5 @@
         <h1>Welcome to DeSpar</h1>
         <a class="button" href="https://discord.com/oauth2/authorize?client_id=1216329949557030953&permissions=8&scope=bot" target="_blank">Invite ACCESS Bot</a>
     </header>
-    <div id="stats">
-        <p id="serverCount">Server Count: Loading...</p>
-        <p id="premiumCount">Premium Users: Loading...</p>
-    </div>
-    <script type="text/javascript">
-        fetch('http://localhost:3000/api/botinfo')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('serverCount').innerHTML = 'Server Count: ' + data.serverCount;
-                document.getElementById('premiumCount').innerHTML = 'Premium Users: ' + Object.keys(data.usersWithPremium).length;
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-    </script>
 </body>
 </html>
