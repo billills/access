@@ -5,86 +5,75 @@
     <style>
         body {
             background-color: #B1F8A2;
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
+            padding: 10px;
             box-sizing: border-box;
         }
         header {
             position: sticky;
-            position: -webkit-sticky; /* for Safari */
             top: 0;
             z-index: 2;
-            background-color: #B1F8A2;
+            background-color:#B1F8A2;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
         }
         h1 {
             font-size: 2em;
             text-align: center;
             color: #000;
+            margin-bottom: 20px;
         }
         p {
             font-size: 1em;
             text-align: justify;
-            width: 80%;
-            margin: 20px auto;
-            color: #000;
+            color: #333;
+            margin-bottom: 30px;
         }
         a.button {
-            display: block;
-            width: 200px;
-            height: 25px;
-            background: #000;
-            padding: 10px;
-            text-align: center;
+            display: inline-block;
+            background-color: #000;
+            color: #ffffff;
+            padding: 10px 15px;
             border-radius: 5px;
-            color: #B1F8A2;
-            font-weight: bold;
-            line-height: 25px;
-            margin: 20px auto;
             text-decoration: none;
-            transition: all 0.3s ease-in-out;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-bottom: 15px;
         }
         a.button:hover {
-            background: #444;
+            background-color: #444;
         }
-        #premium-button {
-            transform: translateY(100vh);
-            transition: transform 0.5s ease-in-out;
-            opacity: 0;
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background-color:#B1F8A2;
         }
-        .show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    </style>
-    <script>
-        window.onscroll = function() {
-            scrollFunction()
-        };
-
-        function scrollFunction() {
-            let premiumButton = document.getElementById("premium-button");
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                premiumButton.classList.add("show");
-            } else {
-                premiumButton.classList.remove("show");
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: .875em;
             }
         }
-    </script>
+    </style>
 </head>
 <body>
     <header>
         <h1>Welcome to DeSpar!</h1>
-        <a class="button" href="https://discord.com/oauth2/authorize?client_id=1216329949557030953&permissions=8&scope=bot" target="_blank">Invite ACCESS Bot</a>
     </header>
-    <section>
-        <p>Meet our premium bot! Enjoy tailor-made commands, unique roles, advanced moderation and more. Elevate your server experience today.</p>
-        <a class="button" id="premium-button" href="premium.html" target="_blank">Purchase Premium</a>
-    </section>
+    <p>Meet our premium bot! Enjoy tailor-made commands, unique roles, stellar moderation, and beyond. Experience the bespoke vibes our bot brings to your server.</p>
+    <a href="https://discord.com/oauth2/authorize?client_id=1216329949557030953&permissions=8&scope=bot" target="_blank" class="button">Invite ACCESS Bot</a>
+    <footer>
+        <a href="premium.html" class="button">Upgrade to Premium</a>
+    </footer>
 </body>
 </html>
