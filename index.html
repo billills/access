@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DeSpar</title>
     <style>
         body {
             background-color: #B1F8A2;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 10px;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
         header {
@@ -18,62 +21,63 @@
             top: 0;
             z-index: 2;
             background-color:#B1F8A2;
-            padding: 20px;
-            width: 100%;
-            text-align: center;
         }
         h1 {
             font-size: 2em;
             text-align: center;
-            color: #000;
-            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 2s;
+            animation: slideUp 2s forwards;
         }
         p {
             font-size: 1em;
-            text-align: justify;
-            color: #333;
-            margin-bottom: 30px;
+            text-align: center;
+            transition: 2s;
         }
         a.button {
             display: inline-block;
             background-color: #000;
-            color: #ffffff;
+            color: #B1F8A2;
             padding: 10px 15px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
-            transition: all 0.3s;
+            transition: 2s;
             margin-bottom: 15px;
         }
         a.button:hover {
             background-color: #444;
         }
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            padding: 20px;
-            background-color:#B1F8A2;
+        #premium-button {
+            opacity: 0;
+            animation: fadeIn 3s 2s forwards;
         }
+        @keyframes fadeIn {
+            100% { opacity: 1; }
+        }
+        @keyframes slideUp {
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Styles */
         @media screen and (max-width: 600px) {
-            h1 {
-                font-size: 1.5em;
-            }
-            p {
-                font-size: .875em;
-            }
+          h1 { font-size: 1.5em; }
+          p { font-size: 0.75em; }
+          a.button { padding: 10px; }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Welcome to DeSpar!</h1>
+        <a class="button" href="https://discord.com/oauth2/authorize?client_id=1216329949557030953&permissions=8&scope=bot" target="_blank">Invite ACCESS Bot</a>
     </header>
-    <p>Meet our premium bot! Enjoy tailor-made commands, unique roles, stellar moderation, and beyond. Experience the bespoke vibes our bot brings to your server.</p>
-    <a href="https://discord.com/oauth2/authorize?client_id=1216329949557030953&permissions=8&scope=bot" target="_blank" class="button">Invite ACCESS Bot</a>
-    <footer>
-        <a href="premium.html" class="button">Upgrade to Premium</a>
-    </footer>
+    
+    <section>
+        <p>Meet DeSpar! Our Premium Bot comes with tailor-made commands, unique roles and more. Elevate your server experience today.</p>
+        <a id="premium-button" class="button" href="premium.html" target="_blank">Purchase Premium</a>
+    </section>
+    
 </body>
 </html>
