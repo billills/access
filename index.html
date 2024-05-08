@@ -1,1 +1,53 @@
-<title>ACCESS</title>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DeSpar</title>
+        <style>
+            body{
+                background-color: #B1F8A2;
+                font-family: Arial, sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+            
+            .button{
+                display: inline-block;
+                padding: 10px 20px;
+                margin-top: 20px;
+                font-size: 20px;
+                font-weight: bold;
+                color: #B1F8A2;
+                background-color:#000;
+                text-decoration: none;
+            }
+
+            h1{
+                transform: translateY(100px);
+                opacity: 0;
+                animation: slideUp 3s forwards;
+            }
+
+            @keyframes slideUp {
+                0%{
+                    transform: translateY(100px);
+                    opacity: 0;
+                }
+                100%{
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to DeSpar</h1>
+        </header>
+
+        <div>
+            <a class="button" href="https://discord.com/oauth2/authorize?client_id=1216329949557030953&permissions=8&scope=bot" target="_blank">Invite ACCESS Bot</a>
+        </div>
+    </body>
+</html>
