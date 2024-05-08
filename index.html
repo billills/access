@@ -16,38 +16,74 @@
             box-sizing: border-box;
         }
         header {
-            width: 100%;
-            padding: 10px;
-            text-align: center;
+            position: sticky;
+            position: -webkit-sticky; /* for Safari */
+            top: 0;
+            z-index: 2;
+            background-color: #B1F8A2;
         }
         h1 {
-            font-size: 2em; /* responsive font size */
+            font-size: 2em;
+            text-align: center;
         }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 1em; /* responsive font size */
-            color: #B1F8A2;
-            background-color:#000;
+        p {
+            font-size: 1em;
+            text-align: center;
+            width: 80%;
+            margin: 20px auto;
+        }
+        a.button {
+            display: block;
+            width: 200px;
+            height: 25px;
+            background: #000;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            line-height: 25px;
+            margin: 20px auto;
             text-decoration: none;
-            margin-top: 20px;
+            transition: all 0.3s ease-in-out;
         }
-        /* Responsive styling */
-        @media only screen and (max-width: 600px) {
-            h1 {
-                font-size: 1.5em;
-            }
-            .button {
-                padding: 5px 10px;
-                font-size: 0.875em;
-            }
+        a.button:hover {
+            background: #444;
+        }
+        #premium-button {
+            transform: translateY(100vh);
+            transition: transform 0.5s ease-in-out;
+            opacity: 0;
+        }
+        .show {
+            transform: translateY(0);
+            opacity: 1;
         }
     </style>
+    <script>
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            let premiumButton = document.getElementById("premium-button");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                premiumButton.classList.add("show");
+            } else {
+                premiumButton.classList.remove("show");
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
-        <h1>Welcome to DeSpar</h1>
+        <h1>Welcome to DeSpar!</h1>
         <a class="button" href="https://discord.com/oauth2/authorize?client_id=1216329949557030953&permissions=8&scope=bot" target="_blank">Invite ACCESS Bot</a>
     </header>
+    <section>
+        <p>Introducing our premium featured bot, crafted with customizable commands, vanity roles, versatile moderation, and personalizable messages. With the purchase of our gourmet premium bot edition, you can customize bot messages to match the unique vibe of your server. Our bot can handle a plethora of tasks, including hosting events, adding/removing roles, and much more!</p>
+        <a class="button" href="features.html" target="_blank">Explore Premium Features</a>
+        <a id="premium-button" class="button" href="purchase.html" target="_blank">Purchase Premium</a>
+    </section>
 </body>
 </html>
